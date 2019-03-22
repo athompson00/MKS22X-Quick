@@ -64,7 +64,9 @@ public class Quick{
 
 
   public static int quickselect(int []data, int k){
-    return 1;
+    int[] temp = Arrays.copyOf(data, data.length);
+    quicksort(temp);
+    return temp[k];
   }
 
   public static void main(String[]args){

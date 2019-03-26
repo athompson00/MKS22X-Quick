@@ -64,9 +64,21 @@ public class Quick{
 
 
   public static int quickselect(int []data, int k){
-    int[] temp = Arrays.copyOf(data, data.length);
-    quicksort(temp);
-    return temp[k];
+    int s = 0;
+    int e = data.length;
+    for (int i = 1; i != 0;){
+      int piv = partition(data, s, e - 1);
+      if (piv < k){
+        s = piv + 1;
+      }
+      if (piv > k){
+        e = piv - 1;
+      }
+      if (piv == k){
+        i = 0;
+      }
+    }
+    return data[k];
   }
 
   public static void main(String[]args){
